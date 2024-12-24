@@ -1,9 +1,13 @@
 import Container from "./Container";
 import { Sun, MoonStars } from "@phosphor-icons/react";
 import styled from "styled-components";
+import { Heading } from "./Sky";
 const NavHeading = styled.button`
 font-family: 'Poppins';
 font-size: 20px;
+ @media (max-width: 500px) {
+     font-size: 15px;
+  }
 color: white;
 padding-left: 10px;
 padding-right: 10px;
@@ -17,6 +21,10 @@ const Switch = styled.label`
   display: inline-block;
   width: 64px;
   height: 34px;
+   @media (max-width: 500px) {
+     width: 54px;
+  height: 24px;
+  }
 `;
 
 const SwitchInput = styled.input`
@@ -41,6 +49,10 @@ const Slider = styled.span`
     content: "";
     height: 30px;
     width: 30px;
+      @media (max-width: 500px) {
+     width: 20px;
+  height: 20px;
+  }
     border-radius: 20px;
     left: 2px;
     bottom: 2px;
@@ -52,7 +64,7 @@ const Slider = styled.span`
 
 const SwitchInputChecked = styled(SwitchInput)`
   &:checked + ${Slider} {
-    background-color: #183153;
+    background-color: #033a52;
   }
 
   &:checked + ${Slider}::before {
@@ -60,22 +72,50 @@ const SwitchInputChecked = styled(SwitchInput)`
   }
 `;
 
-const SunIcon = styled.div`
+const SunContainer = styled.div`
   position: absolute;
   top: 6px;
   left: 36px;
   z-index: 1;
   width: 32px;
   height: 32px;
+   @media (max-width: 500px) {
+  top: 1px;
+    left: 32px;
+  }
 `;
 
-const MoonIcon = styled.div`
+const MoonContainer = styled.div`
   position: absolute;
   top: 5px;
   left: 5px;
   z-index: 1;
   width: 32px;
   height: 32px;
+   @media (max-width: 500px) {
+  top: 1px;
+  }
+`;
+
+const MoonStarsIcon = styled(MoonStars)`
+height: 24px;
+width: 24px;
+
+ @media (max-width: 500px) {
+     width: 14px;
+  height: 14px;
+  }
+`;
+
+const SunIcon = styled(Sun)`
+height: 24px;
+width: 24px;
+
+ @media (max-width: 500px) {
+  top: 3px;
+     width: 14px;
+  height: 14px;
+  }
 `;
 
 export default function NavBar({ setColourScheme, colourScheme }) {
@@ -92,6 +132,11 @@ export default function NavBar({ setColourScheme, colourScheme }) {
       display={'flex'}
       customStyle={'top: 0; z-index: 1; backdrop-filter: blur(10px); align-items: center; box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 15%), 0px 1px 3px 0px rgba(0, 0, 0, 30%);'}
     >
+        <Container alignSelf={'center'}
+        customStyle={'flex-grow: 1; justify-content: start;'}
+        paddingTop={'5px'}>
+            <Heading style={{fontSize: '30px'}}> KA</Heading>
+        </Container>
       <Container
         alignSelf={'center'}
         customStyle={'flex-grow: 1; justify-content: flex-end; display: flex;'}
@@ -116,9 +161,9 @@ export default function NavBar({ setColourScheme, colourScheme }) {
           />
           <Slider>
             {colourScheme === 'light' ? (
-              <SunIcon><Sun fill='#FFDF22' size={24}/></SunIcon>
+              <SunContainer><SunIcon fill='#FFDF22' size={24}/></SunContainer>
             ) : (
-              <MoonIcon><MoonStars fill='#EDE7C5' size={24}/></MoonIcon>
+              <MoonContainer><MoonStarsIcon fill='#EDE7C5' size={24}/></MoonContainer>
             )}
           </Slider>
         </Switch>

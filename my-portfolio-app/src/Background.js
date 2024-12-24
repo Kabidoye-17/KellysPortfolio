@@ -18,7 +18,7 @@ export default function Background() {
 
     return (
        <BackgroundContainer>
-        <Container backgroundColor={colourScheme === 'light'? 'rgba(194,233,249,1)' : 'rgb(0, 169, 239, 1)'}>
+        <Container backgroundColor={colourScheme === 'light'? 'rgba(194,233,249,1)' : 'rgba(138,221,255,1)'}>
         <NavBar setColourScheme={setColourScheme} colourScheme={colourScheme}/>
             <Sky colourScheme={colourScheme}/>
     </Container>
