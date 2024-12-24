@@ -55,7 +55,7 @@ colourScheme: string;
 export default function Weather({colourScheme}: Props){
 
   const [weatherData, setWeatherData] = useState<{time: Date, temperature2m: number, rain: number, snowfall: number}>();
-  const [userLocation, setUserLocation] = useState<{latitude: number, longitude: number}>({latitude: 53, longitude: 7.29});
+  const [userLocation, setUserLocation] = useState<{latitude: number, longitude: number}>({latitude: 53, longitude: -7.29});
   const [time, setTime] = useState<Date>();
   const getUserLocation = () => {
     if (navigator.geolocation) {
