@@ -118,9 +118,14 @@ width: 24px;
   }
 `;
 
-export default function NavBar({ setColourScheme, colourScheme }) {
-  const onChange = (e) => {
-    setColourScheme(e.target.checked ? 'dark' : 'light');
+type Props = {
+  colourScheme: string;
+  setColourScheme: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function NavBar({ setColourScheme, colourScheme }: Props) {
+  const onChange = (e: { target: { checked: any; }; }) => {
+    setColourScheme(e.target?.checked ? 'dark' : 'light');
   };
 
   return (

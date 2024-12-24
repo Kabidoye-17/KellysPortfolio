@@ -32,7 +32,11 @@ width: 100%;
 
 `
 
-export default function Sky({colourScheme}) {
+type Props = {
+  colourScheme: string;
+}
+
+export default function Sky({colourScheme}: Props) {
 
     return (
 
