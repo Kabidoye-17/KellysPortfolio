@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import BackgroundSector from './BackgroundSector';
+import Weather from './Weather';
+import Container from "./Container";
 
-const Heading = styled.div`
+export const Heading = styled.div`
 font-family: Montserrat;
 color: white;
 font-weight: 900;
@@ -17,10 +19,17 @@ text-shadow:
 padding-bottom: 5px
 
 `
-const TextContainer = styled.div`
-align-self: center;
-padding-top: 20px;
-padding-bottom: 20px;
+const Content= styled.div`
+display: flex;
+width: 100%;
+ @media (min-width: 960px) {
+     justify-content: space-between;
+  }
+ @media (max-width: 959px) {
+ display: inline;
+   justify-content: center;
+  }
+
 `
 
 export default function Sky({colourScheme}) {
@@ -28,10 +37,15 @@ export default function Sky({colourScheme}) {
     return (
 
     <BackgroundSector colour={"upperSky"} colourScheme={colourScheme}>
-<TextContainer>
+        <Content>
+<Container alignSelf='center'justifySelf='start' paddingTop='20px' paddingBottom='20px'>
         <Heading>Kelly</Heading>
         <Heading>Abidoye</Heading>
-        </TextContainer>
+        </Container>
+        <Container alignSelf='center' justifySelf='center' padding='20px' >
+      <Weather colourScheme={colourScheme}/>
+      </Container>
+      </Content>
     </BackgroundSector>
     )
 }
