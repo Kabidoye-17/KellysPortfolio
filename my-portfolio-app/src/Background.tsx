@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import Container from './Container';
 import { useLocalStorage } from '@uidotdev/usehooks';
 import Land from './Land';
+import Dirt from './Dirt';
 
 const BackgroundContainer = styled.div`
  background-size: cover;
@@ -23,6 +24,7 @@ export default function Background() {
         <NavBar setColourScheme={setColourScheme} colourScheme={colourScheme}/>
             <Sky colourScheme={colourScheme}/>
             <Land colourScheme={colourScheme}/>
+            <Dirt colourScheme={colourScheme}/>
     </Container>
         </BackgroundContainer>
     );
