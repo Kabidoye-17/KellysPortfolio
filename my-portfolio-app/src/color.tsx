@@ -9,8 +9,8 @@ export default function useBackgroundColor(colour: string, colourScheme: string)
         return upperSky;
       case 'lowerSky':
         return lowerSky;
-      default:
-        return 'red';
+      default: 
+        return 'white';
     }
   };
 
@@ -24,7 +24,7 @@ export default function useBackgroundColor(colour: string, colourScheme: string)
       case 'lowerSky':
         return lowerSky;
       default:
-        return 'red';
+        return 'white';
     }
   };
 

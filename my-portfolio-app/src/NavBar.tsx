@@ -135,7 +135,7 @@ export default function NavBar({ setColourScheme, colourScheme }: Props) {
       height={'60px'}
       position={'sticky'}
       display={'flex'}
-      customStyle={'top: 0; z-index: 1; backdrop-filter: blur(10px); align-items: center; box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 15%), 0px 1px 3px 0px rgba(0, 0, 0, 30%);'}
+      customStyle={'top: 0; z-index: 3; backdrop-filter: blur(10px); align-items: center; box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 15%), 0px 1px 3px 0px rgba(0, 0, 0, 30%);'}
     >
         <Container alignSelf={'center'}
         customStyle={'flex-grow: 1; justify-content: start;'}
