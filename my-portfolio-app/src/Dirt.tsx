@@ -24,11 +24,13 @@ const FlexContainer = styled.div`
 
 type Props = {
     colourScheme: string;
+    myWorkRef: React.RefObject<HTMLDivElement | null>;
   };
 
 
-export default function Dirt({ colourScheme }: Props) {
+export default function Dirt({ colourScheme, myWorkRef }: Props) {
   return (
+    <div ref={myWorkRef}>
     <BackgroundSector colour={""} colourScheme={colourScheme}>
      <BackgroundImage >
         <Heading style={{fontSize: '60px', paddingBottom: '30px'}}>My Work</Heading>
@@ -69,5 +71,6 @@ export default function Dirt({ colourScheme }: Props) {
         
      </BackgroundImage>
     </BackgroundSector>
+    </div>
   );
 }
