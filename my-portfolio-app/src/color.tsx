@@ -1,8 +1,8 @@
 export default function useBackgroundColor(colour: string, colourScheme: string) {
 
   const getLightModeBackgroundColor = (colour: string) => {
-    const upperSky = 'linear-gradient(180deg, rgba(194,233,249,1) 57%, rgba(117,201,235,1) 77%)';
-    const lowerSky = '#75c9eb';
+    const upperSky = 'linear-gradient(to bottom, #9be2fe 0%,#67d1fb 100%);';
+    const lowerSky = '#67d1fb';
 
     switch (colour) {
       case 'upperSky':
@@ -15,8 +15,8 @@ export default function useBackgroundColor(colour: string, colourScheme: string)
   };
 
   const getDarkModeBackgroundColor = (colour: string) => {
-    const upperSky = 'linear-gradient(180deg, rgba(138,221,255,1) 12%, rgba(39,110,140,1) 81%);';
-    const lowerSky = ' rgba(39,110,140,1)';
+    const upperSky = ' linear-gradient(to bottom, #40405c 0%,#6f71aa 80%,#8a76ab 100%);';
+    const lowerSky = ' #8a76ab';
 
     switch (colour) {
       case 'upperSky':
