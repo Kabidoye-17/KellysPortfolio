@@ -65,7 +65,7 @@ const Slider = styled.span`
 
 const SwitchInputChecked = styled(SwitchInput)`
   &:checked + ${Slider} {
-    background-color: #033a52;
+    background-color:#181829;
   }
 
   &:checked + ${Slider}::before {
