@@ -13,6 +13,7 @@ padding-left: 10px;
 padding-right: 10px;
 border: none;
 background-color: transparent;
+cursor: pointer ;
 
 `;
 const Switch = styled.label`
@@ -121,11 +122,21 @@ width: 24px;
 type Props = {
   colourScheme: string;
   setColourScheme: React.Dispatch<React.SetStateAction<string>>;
+  aboutMeRef: React.RefObject<HTMLDivElement | null>;
+  myWorkRef: React.RefObject<HTMLDivElement | null>;
 }
 
-export default function NavBar({ setColourScheme, colourScheme }: Props) {
+export default function NavBar({ setColourScheme, colourScheme, aboutMeRef, myWorkRef }: Props) {
   const onChange = (e: { target: { checked: any; }; }) => {
     setColourScheme(e.target?.checked ? 'dark' : 'light');
+  };
+
+  const scrollToAboutMe = () =>{
+    aboutMeRef?.current?.scrollIntoView({behavior: "smooth"})    
+  };
+
+  const scrollToMyWork = () =>{
+    myWorkRef?.current?.scrollIntoView({behavior: "smooth"})    
   };
 
   return (
@@ -148,10 +159,10 @@ export default function NavBar({ setColourScheme, colourScheme }: Props) {
         paddingRight={'5px'}
         paddingTop={'13px'}
       >
-        <NavHeading>
+        <NavHeading onClick={() => {scrollToAboutMe();}}>
         About me
         </NavHeading>
-        <NavHeading>
+        <NavHeading onClick={() => {scrollToMyWork();}}>
         My work
         </NavHeading>
         <NavHeading>

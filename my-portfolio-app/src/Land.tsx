@@ -36,10 +36,12 @@ color: white;
 
 type Props = {
   colourScheme: string;
+  aboutMeRef: React.RefObject<HTMLDivElement | null>;
 };
 
-export default function Land({ colourScheme }: Props) {
+export default function Land({ colourScheme, aboutMeRef }: Props) {
   return (
+    <div ref={aboutMeRef}>
     <BackgroundSector colour={"lowerSky"} colourScheme={colourScheme}>
       <Content >
         <Container  display="flex"  width="100%" customStyle="text-align: center; justify-content: space-between;" >
@@ -51,5 +53,6 @@ export default function Land({ colourScheme }: Props) {
         <DirtContainer />
       </Content>
     </BackgroundSector>
+    </div>
   );
 }
