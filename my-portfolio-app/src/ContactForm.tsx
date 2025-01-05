@@ -59,7 +59,7 @@ font-weight: 500;
  cursor: grabbing;
  color:rgb(91, 90, 90);
  }
-
+padding-bottom: 10px
 `
 
 const ErrorMessage = styled.span`
@@ -153,7 +153,7 @@ export default function ContactForm(){
 <Container  
     display="flex" 
     backgroundColor="#fbfcff" 
-    height="590px" 
+    height="540px" 
     width="450px" 
     customStyle="border-radius: 15px; flex-direction: column; align-items: center;  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; @media (max-width: 630px) {
     width: 300px; height: 450px;
