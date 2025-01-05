@@ -1,5 +1,7 @@
 export default function useBackgroundColor(colour: string, colourScheme: string) {
 
+  const underground = "#a8a0a0"
+
   const getLightModeBackgroundColor = (colour: string) => {
     const upperSky = 'linear-gradient(to bottom, #9be2fe 0%,#67d1fb 100%);';
     const lowerSky = '#67d1fb';
@@ -9,6 +11,8 @@ export default function useBackgroundColor(colour: string, colourScheme: string)
         return upperSky;
       case 'lowerSky':
         return lowerSky;
+      case 'underground':
+        return underground;
       default: 
         return 'white';
     }
@@ -23,6 +27,8 @@ export default function useBackgroundColor(colour: string, colourScheme: string)
         return upperSky;
       case 'lowerSky':
         return lowerSky;
+        case 'underground':
+          return underground;
       default:
         return 'white';
     }
