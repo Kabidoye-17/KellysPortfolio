@@ -55,7 +55,7 @@ export default function Land({ colourScheme, aboutMeRef }: Props) {
       <Content >
         <Container  display="flex"
   width="100%"
-  customStyle="text-align: center; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap;" >
+  customStyle="text-align: center; justify-content: center; align-items: end; gap: 20px; flex-wrap: wrap;" >
 <Text style={{ flexGrow: 1, margin: '0 20px', textAlign: 'center', maxWidth: '1000px', paddingBottom: "50px" }}>
     Hi! I’m a software engineering student at the University of Limerick, developing my skills with the goal of becoming a full-stack developer. My current focus is in Java, React.js, and JavaScript, and I’m also comfortable with Python, C++, and Ruby on Rails. So far, I’ve completed 5 projects, including this website! I’m always eager for a challenge—right now, I’m focused on web development, but I’m excited to explore app development soon.
   </Text>
