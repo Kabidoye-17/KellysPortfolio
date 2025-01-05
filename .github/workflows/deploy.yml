@@ -16,15 +16,18 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '16' 
+        node-version: '16'
 
     - name: Install dependencies
       run: npm install
+      working-directory: my-portfolio-app  
 
     - name: Build the app
       run: npm run build
+      working-directory: my-portfolio-app  
 
     - name: Deploy to GitHub Pages
       run: npm run deploy
+      working-directory: my-portfolio-app  
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
