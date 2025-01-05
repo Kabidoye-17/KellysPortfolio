@@ -6,7 +6,7 @@ import ProjectContainer from "./ProjectContainer";
 
 const BackgroundImage = styled.div`
 width: 100%;
-background-image: url(${"/images/Soil.png"});
+background-image: url(${"./images/Soil.png"});
 display: inline;
 text-align: center;
 
@@ -36,7 +36,7 @@ export default function Dirt({ colourScheme, myWorkRef }: Props) {
         date="December 2024"
         title="Portfolio Website"
         descriptionText="Website detailing my projects in React and Javascript "
-        image="/images/website.png" 
+        image="./images/website.png" 
         website={true}
         websiteLink="http://localhost:3000/"
         sourceCode="https://github.com/Kabidoye-17/myNewPortfolio"
@@ -45,7 +45,7 @@ export default function Dirt({ colourScheme, myWorkRef }: Props) {
         date="April 2024"
         title="Spork"
         descriptionText="Murder mystery game in C++"
-        image="/images/Spork.png"
+        image="./images/Spork.png"
         website={false}
         sourceCode="https://github.com/Kabidoye-17/SporkProject"
         />
@@ -53,7 +53,7 @@ export default function Dirt({ colourScheme, myWorkRef }: Props) {
         date="February 2024"
         title="Clubhub"
         descriptionText="Club management system website in Python"
-        image="/images/Clubhub.png"
+        image="./images/Clubhub.png"
         website={false}
         sourceCode="https://github.com/ElliceNels/ClubHub"
         />
@@ -61,7 +61,7 @@ export default function Dirt({ colourScheme, myWorkRef }: Props) {
         date="December 2023"
         title="GoGoTaxi"
         descriptionText="Taxi ordering simulation app in Java"
-        image="/images/GoGoTaxi.png"
+        image="./images/GoGoTaxi.png"
         website={false}
         sourceCode="https://github.com/Elle0-0/GoGoTaxi"
         />
@@ -69,7 +69,7 @@ export default function Dirt({ colourScheme, myWorkRef }: Props) {
         date="November 2023"
         title="Risky Quizness"
         descriptionText="Quiz app in Java"
-        image="/images/RiskyQuizness.png"
+        image="./images/RiskyQuizness.png"
         website={false}
         sourceCode="https://github.com/Kabidoye-17/KellyMiniEpic"
         />

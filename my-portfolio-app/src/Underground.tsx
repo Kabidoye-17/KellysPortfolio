@@ -14,7 +14,7 @@ type Props = {
 
   const BackgroundImage = styled.div`
 width: 100%;
-background-image: url(${"/images/Rock.png"});
+background-image: url(${"./images/Rock.png"});
 background-size: cover;
 display: inline-block;
 justify-content: center;
