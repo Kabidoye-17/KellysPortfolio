@@ -124,9 +124,10 @@ type Props = {
   setColourScheme: React.Dispatch<React.SetStateAction<string>>;
   aboutMeRef: React.RefObject<HTMLDivElement | null>;
   myWorkRef: React.RefObject<HTMLDivElement | null>;
+  contactMeRef: React.RefObject<HTMLDivElement | null>;
 }
 
-export default function NavBar({ setColourScheme, colourScheme, aboutMeRef, myWorkRef }: Props) {
+export default function NavBar({ setColourScheme, colourScheme, aboutMeRef, myWorkRef, contactMeRef }: Props) {
   const onChange = (e: { target: { checked: any; }; }) => {
     setColourScheme(e.target?.checked ? 'dark' : 'light');
   };
@@ -137,6 +138,10 @@ export default function NavBar({ setColourScheme, colourScheme, aboutMeRef, myWo
 
   const scrollToMyWork = () =>{
     myWorkRef?.current?.scrollIntoView({behavior: "smooth"})    
+  };
+
+  const scrollToContactMe = () =>{
+    contactMeRef?.current?.scrollIntoView({behavior: "smooth"})    
   };
 
   return (
@@ -165,7 +170,7 @@ export default function NavBar({ setColourScheme, colourScheme, aboutMeRef, myWo
         <NavHeading onClick={() => {scrollToMyWork();}}>
         My work
         </NavHeading>
-        <NavHeading>
+        <NavHeading onClick={() => {scrollToContactMe();}}>
         Contact me
         </NavHeading>
         <Switch>

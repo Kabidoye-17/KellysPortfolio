@@ -1,0 +1,121 @@
+.background {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: transparent;
+  }
+
+  .tree {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .trunk {
+    width: 35px;
+    height: 40%;
+    background-color: #774418;
+    position: relative;
+  }
+  
+  .trunk::before,
+  .trunk::after {
+    border-radius: 3px;
+    position: absolute;
+    content: "";
+    background-color: #774418;
+    width: 30px;
+    height: 60px;
+  }
+  
+  .trunk::before {
+    top: -45px;
+    transform-origin: right bottom;
+    transform: rotateZ(-30deg);
+  }
+  
+  .trunk::after {
+    top: -30px;
+    transform-origin: right bottom;
+    transform: rotateZ(30deg);
+  }
+  
+  .crown {
+    height: 60%;
+    border-radius: 25%;
+    background-color: #606c38;
+    width: 100%;
+    position: relative;
+  }
+  
+  .leaves {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 45%;
+    background-color: #606c38;
+    z-index: 1;
+    transform: scale(0);
+    transition: transform 1s;
+  }
+  
+  #leaves-1 {
+    top: -25%;
+    left: 25%;
+  }
+  
+  #leaves-2 {
+    top: 25%;
+    left: -25%;
+  }
+  
+  #leaves-3 {
+    bottom: 20%;
+    right: -20%;
+  }
+  
+  #leaves-4 {
+    bottom: -20px;
+    right: 10%;
+  }
+  
+  #leaves-5 {
+    bottom: -20px;
+    right: 50%;
+  }
+  
+  .leaves::before {
+    background-color: #c27939;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 2;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%, 30%);
+  }
+  
+  .leaves::after {
+    background-color: #283618;
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 2;
+    top: 25%;
+    left: 45%;
+    transform: translate(-50%, 30%);
+  }
+  
+  .tree:hover .leaves {
+    transform: scale(1);
+  }
+  

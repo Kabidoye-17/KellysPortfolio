@@ -1,16 +1,12 @@
 import styled from "styled-components";
 import BackgroundSector from "./BackgroundSector";
 import { Heading } from "./Sky";
-import underGround from './images/UnderGround.png'; 
-import SporkVideo from "./images/SporkVideo.png";
-import Clubhub from "./images/Clubhub.png";
 import ProjectContainer from "./ProjectContainer";
-import RiskyQuizness from "./images/RiskyQuizness.png";
-import GoGoTaxi from"./images/GoGoTaxi.png";
+
 
 const BackgroundImage = styled.div`
 width: 100%;
-background-image: url(${underGround});
+background-image: url(${"/images/Soil.png"});
 display: inline;
 text-align: center;
 
@@ -35,37 +31,47 @@ export default function Dirt({ colourScheme, myWorkRef }: Props) {
      <BackgroundImage >
         <Heading style={{fontSize: '60px', paddingBottom: '30px'}}>My Work</Heading>
 <FlexContainer>
+
+        <ProjectContainer
+        date="December 2024"
+        title="Portfolio Website"
+        descriptionText="Website detailing my projects in React and Javascript "
+        image="/images/website.png" 
+        website={true}
+        websiteLink="http://localhost:3000/"
+        sourceCode="https://github.com/Kabidoye-17/myNewPortfolio"
+        />
         <ProjectContainer
         date="April 2024"
         title="Spork"
         descriptionText="Murder mystery game in C++"
-        image={SporkVideo}
+        image="/images/Spork.png"
         website={false}
-        link="https://github.com/Kabidoye-17/SporkProject"
+        sourceCode="https://github.com/Kabidoye-17/SporkProject"
         />
         <ProjectContainer
         date="February 2024"
         title="Clubhub"
         descriptionText="Club management system website in Python"
-        image={Clubhub}
+        image="/images/Clubhub.png"
         website={false}
-        link="https://github.com/ElliceNels/ClubHub"
+        sourceCode="https://github.com/ElliceNels/ClubHub"
         />
        <ProjectContainer
         date="December 2023"
         title="GoGoTaxi"
         descriptionText="Taxi ordering simulation app in Java"
-        image={GoGoTaxi}
+        image="/images/GoGoTaxi.png"
         website={false}
-        link="https://github.com/Elle0-0/GoGoTaxi"
+        sourceCode="https://github.com/Elle0-0/GoGoTaxi"
         />
         <ProjectContainer
         date="November 2023"
         title="Risky Quizness"
         descriptionText="Quiz app in Java"
-        image={RiskyQuizness}
+        image="/images/RiskyQuizness.png"
         website={false}
-        link="https://github.com/Kabidoye-17/KellyMiniEpic"
+        sourceCode="https://github.com/Kabidoye-17/KellyMiniEpic"
         />
         </FlexContainer>
         

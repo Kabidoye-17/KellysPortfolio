@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { fetchWeatherApi } from 'openmeteo';
 import { useEffect, useState } from "react";
-import DayBird from "./images/DayBird.png";
-import NightBird from "./images/NightBird.png"
 import Container from "./Container";
 
 const SpeechBubble = styled.div`
@@ -17,14 +15,14 @@ const SpeechBubble = styled.div`
 
 `;
 
-const WeatherHeading = styled.div`
+export const WeatherHeading = styled.div`
 font-weight: 900;
 font-family: Montserrat;
 font-size: 28px;
 color: 	#3e5172;
 `;
 
-const WeatherSubheading = styled.div`
+export const WeatherSubheading = styled.div`
 padding-top: 10px;
 font-weight: 600;
 font-family: Montserrat;
@@ -114,9 +112,9 @@ export default function Weather({colourScheme}: Props){
     return(
       <Container>
         {colourScheme === 'light' ? (
-<BirdContainer alt="bird" src={DayBird}></BirdContainer>
+<BirdContainer alt="bird" src="./images/DayBird.png"></BirdContainer>
         ) : (
-<BirdContainer alt="bird" src={NightBird}></BirdContainer>)}
+<BirdContainer alt="bird" src="./images/NightBird.png"></BirdContainer>)}
 
     <SpeechBubble>
 <WeatherHeading>
