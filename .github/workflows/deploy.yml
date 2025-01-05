@@ -1,39 +1,19 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
-    branches:
-      - main  
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Build and Deploy React app to GitHub Pages
+      uses: omkartapale/react-deployment-gh-pages@v1.0.0
       with:
-        node-version: '16'
-
-    - name: Install dependencies
-      run: npm install
-      working-directory: my-portfolio-app  
-
-    - name: Build the app
-      run: npm run build
-      working-directory: my-portfolio-app  
-
-    - name: Configure Git user
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-      working-directory: my-portfolio-app 
-
-    - name: Deploy to GitHub Pages
-      run: npm run deploy
-      working-directory: my-portfolio-app  
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        working-directory: my-portfolio-app
