@@ -105,7 +105,7 @@ export default function Weather({colourScheme}: Props){
     }; 
 
     fetchWeather();
-  }, []);
+  });
 
 
 

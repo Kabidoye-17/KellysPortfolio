@@ -53,9 +53,9 @@ export default function Underground({ colourScheme, contactMeRef }: Props) {
     <ContactForm/>
     </Container>
     <Container display="flex" width="100%" customStyle="flex-direction: row; gap: 10px; justify-content: center;" paddingBottom="40px">
-    <a  target="_blank" style={{textDecoration: "none"}}href='https://github.com/Kabidoye-17'><Icon><GithubLogo size={50} color="grey"/></Icon></a>
-    <a  target="_blank" style={{textDecoration: "none"}}href='https://www.linkedin.com/in/kelly-abidoye/'><Icon><LinkedinLogo size={50} color="grey"/></Icon></a>
-    <a  target="_blank" style={{textDecoration: "none"}}href="mailto:Kabidoye17@outlook.com"><Icon><EnvelopeSimple size={50} color="grey"/></Icon></a>
+    <a  target="_blank" rel="noreferrer" style={{textDecoration: "none"}}href='https://github.com/Kabidoye-17'><Icon><GithubLogo size={50} color="grey"/></Icon></a>
+    <a  target="_blank" rel="noreferrer"  style={{textDecoration: "none"}}href='https://www.linkedin.com/in/kelly-abidoye/'><Icon><LinkedinLogo size={50} color="grey"/></Icon></a>
+    <a  target="_blank" rel="noreferrer"  style={{textDecoration: "none"}}href="mailto:Kabidoye17@outlook.com"><Icon><EnvelopeSimple size={50} color="grey"/></Icon></a>
     <a  style={{textDecoration: "none"}}href="./files/KellyAbidoyeCV.pdf" download='KellyAbidoyeCV.pdf'><Icon><WeatherSubheading style={{fontSize: 32, color: "grey" }}>CV</WeatherSubheading></Icon></a>
     </Container>
     <Container width="inherit"  display='flex' backgroundColor="black" height="50px;" customStyle="color: white; justify-content: center; align-items: center;"> <Copyright size={20} style={{paddingRight: '3px'}} />Kelly Abidoye. All rights reserved</Container>

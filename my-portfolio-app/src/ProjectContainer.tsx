@@ -146,11 +146,11 @@ export default function ProjectContainer({title, descriptionText, website, image
         </DescriptionText>
         { website && websiteLink && (
           <ProjectLink>
-            <a   target="_blank" style={{textDecoration: "none"}}href={websiteLink}><RoundDivText>{"Website"}</RoundDivText></a>
+            <a   target="_blank" rel="noreferrer"  style={{textDecoration: "none"}}href={websiteLink}><RoundDivText>{"Website"}</RoundDivText></a>
           </ProjectLink>
         )}
         <ProjectLink>
-<a   target="_blank" style={{textDecoration: "none"}}href={sourceCode}><RoundDivText>{"Source Code"}</RoundDivText></a>
+<a   target="_blank" rel="noreferrer"  style={{textDecoration: "none"}}href={sourceCode}><RoundDivText>{"Source Code"}</RoundDivText></a>
 </ProjectLink>
        </InnerContainer>
         <Container 
