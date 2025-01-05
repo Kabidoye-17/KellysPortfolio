@@ -23,7 +23,7 @@ color: 	#3e5172;
 `;
 
 export const WeatherSubheading = styled.div`
-padding-top: 10px;
+padding-bottom: 10px;
 font-weight: 600;
 font-family: Montserrat;
 font-size: 20px;
