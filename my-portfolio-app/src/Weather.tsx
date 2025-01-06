@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { fetchWeatherApi } from 'openmeteo';
 import { useEffect, useState } from "react";
 import Container from "./Container";
+import { fetchWeatherApi } from "openmeteo";
 
 const SpeechBubble = styled.div`
   position: relative;
@@ -52,11 +52,11 @@ colourScheme: string;
 
 export default function Weather({colourScheme}: Props){
 
-  const [weatherData, setWeatherData] = useState<{time: Date, temperature2m: number, rain: number, snowfall: number}>();
+  const [weatherData, setWeatherData] = useState<{temperature2m: number, rain: number, snowfall: number}>();
   const [userLocation, setUserLocation] = useState<{latitude: number, longitude: number}>({latitude: 53, longitude: -7.29});
   const [time, setTime] = useState<Date>();
 
-   const getUserLocation = () => {
+  const getUserLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -68,59 +68,44 @@ export default function Weather({colourScheme}: Props){
         }
       );
     }
+  
   };
+  getUserLocation();
 
- // Update time every second
- useEffect(() => {
-  const intervalId = setInterval(() => {
-    setTime(new Date());
-  }, 1000); // Update time every second
-  return () => clearInterval(intervalId); // Clean up the interval on component unmount
-}, []);
-
-// Fetch weather data every 30 minutes
-useEffect(() => {
-  getUserLocation(); // Run this once on mount
-
-  const fetchWeather = async () => {
-    const params = {
-      latitude: userLocation.latitude,  
-      longitude: userLocation.longitude, 
-      current: ["temperature_2m", "rain", "snowfall"],
-      forecast_days: 1
-    };
-    const url = "https://api.open-meteo.com/v1/forecast";
-
-    try {
-      const response = await fetch(`${url}?latitude=${params.latitude}&longitude=${params.longitude}&current=${params.current.join(",")}&forecast_days=${params.forecast_days}`);
-      const data = await response.json();
+  useEffect(()=>{
+    setInterval(()=>{ let newDate = new Date(); setTime(newDate)}, 1000);
+  },[])
 
 
-      // Assuming the response structure is as follows:
-      const current = data.current;
-      setWeatherData({
-        time: new Date(current.time * 1000), // Adjust based on your API response
-        temperature2m: current.temperature_2m,
-        rain: current.rain,
-        snowfall: current.snowfall,
-      });
-    } catch (error) {
-      console.error("Error fetching weather data:", error);
-    }
-  };
+  useEffect(() => {
+    const fetchWeather = async () => {
+      const params = {
+        latitude: userLocation.latitude,  
+        longitude: userLocation.longitude, 
+        current: ["temperature_2m", "rain", "snowfall"],
+        forecast_days: 1
+      };
 
-  // Initial fetch when the component mounts
-  fetchWeather();
+      const url = "https://api.open-meteo.com/v1/forecast";
+      
+      try {
+        const responses = await fetchWeatherApi(url, params); 
+        const response =  responses[0]; 
+        const current = response.current()!;
 
-  // Set interval to fetch weather data every 30 minutes (1800000ms)
-  const intervalId = setInterval(fetchWeather, 1800000); // Fetch every 30 minutes
+        setWeatherData({
+          temperature2m: current.variables(0)!.value(),
+          rain: current.variables(2)!.value(),
+          snowfall: current.variables(3)!.value(),
+        });
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    }; 
 
-  // Clean up the interval when the component unmounts
-  return () => clearInterval(intervalId); 
-}, []); // Empty dependency array ensures this useEffect runs once when the component mounts
-
-
-
+    fetchWeather();
+  }, [userLocation.latitude, userLocation.longitude]);
+  
     return(
       <Container>
         {colourScheme === 'light' ? (
