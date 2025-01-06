@@ -133,7 +133,7 @@ type Props = {
 }
 export default function ProjectContainer({title, descriptionText, website, image, date, sourceCode, websiteLink}: Props){
     return (
-      <Container customStyle="justify-content: center; " display="flex" paddingBottom="40px">
+      <Container customstyle="justify-content: center; " display="flex" paddingbottom="40px">
         <OuterContainer 
       >
         <ImageContainer src={image} alt="project image"/>
@@ -156,8 +156,8 @@ export default function ProjectContainer({title, descriptionText, website, image
         <Container 
           height="50px" 
           width="150px" 
-          backgroundColor="grey" 
-          customStyle="border-radius: 20px; margin-bottom: -25px; z-index: 1; display: flex; align-items: center;justify-content: center;" 
+          backgroundcolor="grey" 
+          customstyle="border-radius: 20px; margin-bottom: -25px; z-index: 1; display: flex; align-items: center;justify-content: center;" 
         >
             <RoundDivText>{date}</RoundDivText>
         </Container>

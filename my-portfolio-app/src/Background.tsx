@@ -25,7 +25,7 @@ export default function Background() {
 
     return (
        <BackgroundContainer>
-        <Container backgroundColor={colourScheme === 'light'? '#9be2fe' : '#40405c'}>
+        <Container backgroundcolor={colourScheme === 'light'? '#9be2fe' : '#40405c'}>
         <NavBar setColourScheme={setColourScheme} colourScheme={colourScheme} aboutMeRef={aboutMeRef} myWorkRef={myWorkRef} contactMeRef={contactMeRef} />
             <Sky colourScheme={colourScheme}/>
             <Land colourScheme={colourScheme} aboutMeRef={aboutMeRef}/>

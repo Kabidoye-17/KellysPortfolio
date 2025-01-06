@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import useBackgroundColor  from './color';
 
-const BackgroundSectorDiv = styled.div<{  backgroundColor?: string;}>`
+const BackgroundSectorDiv = styled.div<{  backgroundcolor?: string;}>`
     width: 100%;
     height: auto;
     display: flex;
-    background: ${({ backgroundColor }) => backgroundColor};   `
+    background: ${({ backgroundcolor }) => backgroundcolor};   `
 
 type Props = {
     colour: string;
@@ -15,9 +15,9 @@ type Props = {
 }
 
 export default function BackgroundSector({ colour, children, colourScheme } : Props) {
-const backgroundColor = useBackgroundColor(colour, colourScheme);
+const backgroundcolor = useBackgroundColor(colour, colourScheme);
     return (
-        <BackgroundSectorDiv backgroundColor={backgroundColor}>
+        <BackgroundSectorDiv backgroundcolor={backgroundcolor}>
             {children}
         </BackgroundSectorDiv>
     );

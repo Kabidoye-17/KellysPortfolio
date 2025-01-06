@@ -4,21 +4,21 @@ type Props = {
   height?: string;
   width?: string;
   paddingLeft?: string;
-  paddingRight?: string;
-  paddingTop?: string;
-  paddingBottom?: string;
+  paddingright?: string;
+  paddingtop?: string;
+  paddingbottom?: string;
   padding?: string;
   borderLeft?: string;
   borderRight?: string;
   borderBottom?: string;
   borderTop?: string;
   border?: string;
-  backgroundColor?: string;
+  backgroundcolor?: string;
   position?: string;
-  alignSelf?: string;
-  justifySelf?: string;
+  alignself?: string;
+  justifyself?: string;
   display?:string;
-  customStyle?: string;
+  customstyle?: string;
   children?: React.ReactNode;
 };
 
@@ -26,61 +26,61 @@ const StyledContainer = styled.div<{
   height?: string;
   width?: string;
   paddingLeft?: string;
-  paddingRight?: string;
-  paddingTop?: string;
-  paddingBottom?: string;
+  paddingright?: string;
+  paddingtop?: string;
+  paddingbottom?: string;
   padding?: string;
   borderLeft?: string;
   borderRight?: string;
   borderBottom?: string;
   borderTop?: string;
   border?: string;
-  backgroundColor?: string;
+  backgroundcolor?: string;
   position?: string;
-  alignSelf?: string;
-  justifySelf?: string;
+  alignself?: string;
+  justifyself?: string;
   display?: string;
-  customStyle?: string;
+  customstyle?: string;
 }>`
   height: ${({ height }) => height || 'auto'};
   width: ${({ width }) => width || 'auto'};
   padding-left: ${({ paddingLeft }) => paddingLeft || '0'};
-  padding-right: ${({ paddingRight }) => paddingRight || '0'};
-  padding-top: ${({ paddingTop }) => paddingTop || '0'};
-  padding-bottom: ${({ paddingBottom }) => paddingBottom || '0'};
+  padding-right: ${({ paddingright }) => paddingright || '0'};
+  padding-top: ${({ paddingtop }) => paddingtop || '0'};
+  padding-bottom: ${({ paddingbottom }) => paddingbottom || '0'};
   padding: ${({ padding }) => padding};
   border-left: ${({ borderLeft }) => borderLeft || 'none'};
   border-right: ${({ borderRight }) => borderRight || 'none'};
   border-bottom: ${({ borderBottom }) => borderBottom || 'none'};
   border-top: ${({ borderTop }) => borderTop || 'none'};
   border: ${({ border }) => border };
-  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
+  background-color: ${({ backgroundcolor }) => backgroundcolor || 'transparent'};
   position: ${({ position }) => position || 'static'};
-  align-self: ${({ alignSelf }) => alignSelf || 'auto'};
-  justify-self: ${({ justifySelf }) => justifySelf || 'auto'};
+  align-self: ${({ alignself }) => alignself || 'auto'};
+  justify-self: ${({ justifyself }) => justifyself || 'auto'};
   display: ${({ display }) => display};
-  ${({ customStyle }) => customStyle};
+  ${({ customstyle }) => customstyle};
 `;
 
 export default function Container({
   height,
   width,
   paddingLeft,
-  paddingRight,
-  paddingTop,
-  paddingBottom,
+  paddingright,
+  paddingtop,
+  paddingbottom,
   padding,
   borderLeft,
   borderRight,
   borderBottom,
   borderTop,
   border,
-  backgroundColor,
+  backgroundcolor,
   position,
-  alignSelf,
-  justifySelf,
+  alignself,
+  justifyself,
   display,
-  customStyle,
+  customstyle,
   children
 }: Props){
   return (
@@ -88,15 +88,15 @@ export default function Container({
       height={height}
       width={width}
       paddingLeft={paddingLeft}
-      paddingRight={paddingRight}
-      paddingTop={paddingTop}
-      paddingBottom={paddingBottom}
+      paddingright={paddingright}
+      paddingtop={paddingtop}
+      paddingbottom={paddingbottom}
       padding={padding}
-      backgroundColor={backgroundColor}
+      backgroundcolor={backgroundcolor}
       position={position}
-      alignSelf={alignSelf}
-      justifySelf={justifySelf}
-      customStyle={customStyle}
+      alignself={alignself}
+      justifyself={justifyself}
+      customstyle={customstyle}
       borderLeft={borderLeft}
       borderRight={borderRight}
       borderBottom={borderBottom}

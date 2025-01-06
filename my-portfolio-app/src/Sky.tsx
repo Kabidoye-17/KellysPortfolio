@@ -42,11 +42,11 @@ export default function Sky({colourScheme}: Props) {
 
     <BackgroundSector colour={"upperSky"} colourScheme={colourScheme}>
         <Content>
-<Container alignSelf='center'justifySelf='start' paddingTop='20px' paddingBottom='20px'>
+<Container alignself='center'justifyself='start' paddingtop='20px' paddingbottom='20px'>
         <Heading>Kelly</Heading>
         <Heading>Abidoye</Heading>
         </Container>
-        <Container alignSelf='center' justifySelf='center' padding='20px' >
+        <Container alignself='center' justifyself='center' padding='20px' >
       <Weather colourScheme={colourScheme}/>
       </Container>
       </Content>

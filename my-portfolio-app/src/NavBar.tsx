@@ -146,23 +146,23 @@ export default function NavBar({ setColourScheme, colourScheme, aboutMeRef, myWo
 
   return (
     <Container
-      backgroundColor={'transparent'}
+      backgroundcolor={'transparent'}
       width={'100%'}
       height={'60px'}
       position={'sticky'}
       display={'flex'}
-      customStyle={'top: 0; z-index: 3; backdrop-filter: blur(10px); align-items: center; box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 15%), 0px 1px 3px 0px rgba(0, 0, 0, 30%);'}
+      customstyle={'top: 0; z-index: 3; backdrop-filter: blur(10px); align-items: center; box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 15%), 0px 1px 3px 0px rgba(0, 0, 0, 30%);'}
     >
-        <Container alignSelf={'center'}
-        customStyle={'flex-grow: 1; justify-content: start;'}
-        paddingTop={'5px'}>
+        <Container alignself={'center'}
+        customstyle={'flex-grow: 1; justify-content: start;'}
+        paddingtop={'5px'}>
             <Heading style={{fontSize: '30px'}}> KA</Heading>
         </Container>
       <Container
-        alignSelf={'center'}
-        customStyle={'flex-grow: 1; justify-content: flex-end; display: flex;'}
-        paddingRight={'5px'}
-        paddingTop={'13px'}
+        alignself={'center'}
+        customstyle={'flex-grow: 1; justify-content: flex-end; display: flex;'}
+        paddingright={'5px'}
+        paddingtop={'13px'}
       >
         <NavHeading onClick={() => {scrollToAboutMe();}}>
         About me

@@ -2,16 +2,16 @@
 import './Tree.css'
 export default function Tree() {
 return (
-    <div class="background">
-    <div class="tree">
-      <div class="crown">
-        <div id="leaves-1" class="leaves"></div>
-        <div id="leaves-2" class="leaves"></div>
-        <div id="leaves-3" class="leaves"></div>
-        <div id="leaves-4" class="leaves"></div>
-        <div id="leaves-5" class="leaves"></div>
+    <div className="background">
+    <div className="tree">
+      <div className="crown">
+        <div id="leaves-1" className="leaves"></div>
+        <div id="leaves-2" className="leaves"></div>
+        <div id="leaves-3" className="leaves"></div>
+        <div id="leaves-4" className="leaves"></div>
+        <div id="leaves-5" className="leaves"></div>
       </div>
-      <div class="trunk"></div>
+      <div className="trunk"></div>
     </div>
   </div>
 );

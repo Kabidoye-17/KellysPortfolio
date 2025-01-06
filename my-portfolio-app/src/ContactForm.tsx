@@ -111,7 +111,6 @@ export default function ContactForm(){
     const messageInput = document.getElementById('message') as HTMLInputElement | null;
     const isNameValid = nameInput?.value.trim();
     const isMessageValid = messageInput?.value.trim();
-    console.log(isNameValid); 
     if (!isNameValid) {
         setValidName(false);
     } else {
@@ -152,15 +151,15 @@ export default function ContactForm(){
     return(
 <Container  
     display="flex" 
-    backgroundColor="#fbfcff" 
+    backgroundcolor="#fbfcff" 
     height="540px" 
     width="450px" 
-    customStyle="border-radius: 15px; flex-direction: column; align-items: center;  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; @media (max-width: 630px) {
+    customstyle="border-radius: 15px; flex-direction: column; align-items: center;  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; @media (max-width: 630px) {
     width: 300px; height: 450px;
   }" 
-    paddingTop="10px">
+    paddingtop="10px">
 <form ref={form} onSubmit={sendEmail}>
-   <Container display='flex'  customStyle="text-align: start; flex-direction: column;" >
+   <Container display='flex'  customstyle="text-align: start; flex-direction: column;" >
    <WeatherSubheading style={{color: "grey", paddingBottom: '5px'}}>
     Name
    </WeatherSubheading >
@@ -169,13 +168,13 @@ export default function ContactForm(){
 <ErrorMessage> Invalid name</ErrorMessage>
    )}
    </Container>
-   <Container display='flex'  customStyle="text-align: start; flex-direction: column;" >
+   <Container display='flex'  customstyle="text-align: start; flex-direction: column;" >
    <WeatherSubheading style={{color: "grey", paddingBottom: '5px'}}>
     Email
    </WeatherSubheading>
    <TextInput type="email" name="from_email" id="from_email"  required />
    </Container>
-   <Container display='flex'  customStyle="text-align: start; flex-direction: column;" >
+   <Container display='flex'  customstyle="text-align: start; flex-direction: column;" >
    <WeatherSubheading style={{color: "grey", paddingBottom: '5px'}}>
     Message
    </WeatherSubheading>
