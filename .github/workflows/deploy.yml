@@ -1,33 +1,40 @@
-name: Deploy to GitHub Pages
+name: Deploy Portfolio App
 
 on:
   push:
     branches:
-      - main  
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' 
 
-    - name: Install dependencies
-      run: npm install
-      working-directory: my-portfolio-app  
+      - name: Install dependencies
+        run: |
+          cd my-portfolio-app
+          npm install
 
-    - name: Build the app
-      run: npm run build
-      working-directory: my-portfolio-app  
-
-    - name: Deploy to GitHub Pages
-      run: npm run deploy
-      working-directory: my-portfolio-app  
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+      - name: Deploy
+        run: |
+          cd my-portfolio-app
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          npm run deploy
+        env:
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
