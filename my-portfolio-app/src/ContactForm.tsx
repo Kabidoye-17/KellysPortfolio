@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Container from "./Container";
 import { WeatherSubheading } from "./Weather";
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 
 
@@ -15,7 +15,7 @@ const TextInput = styled.input`
  border-radius: 8px;
  border: grey solid 3px;
  background-color: #f1f3f8;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 font-size: 18px;
 margin-bottom: 10px;
 padding-left: 5px;
@@ -31,7 +31,7 @@ height: 200px;
  border-radius: 8px;
  border: grey solid 3px;
  background-color: #f1f3f8;
-  font-family: 'Poppins';
+  font-family: "Poppins";
    resize: none;
 font-size: 18px;
 padding-left: 5px;
@@ -106,9 +106,9 @@ export default function ContactForm(){
     e.preventDefault();
     setIsSending(true);
 
-    const nameInput = document.getElementById('from_name') as HTMLInputElement | null;
-    const emailInput = document.getElementById('from_email') as HTMLInputElement | null;
-    const messageInput = document.getElementById('message') as HTMLInputElement | null;
+    const nameInput = document.getElementById("from_name") as HTMLInputElement | null;
+    const emailInput = document.getElementById("from_email") as HTMLInputElement | null;
+    const messageInput = document.getElementById("message") as HTMLInputElement | null;
     const isNameValid = nameInput?.value.trim();
     const isMessageValid = messageInput?.value.trim();
     if (!isNameValid) {
@@ -138,9 +138,9 @@ export default function ContactForm(){
 () => {
     setValidName(true);
     setValidMessage(true);
-    nameInput.value = '';
-    emailInput.value = '';
-    messageInput.value = '';
+    nameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
 }
       )
     } else {
@@ -159,8 +159,8 @@ export default function ContactForm(){
   }" 
     paddingtop="10px">
 <form ref={form} onSubmit={sendEmail}>
-   <Container display='flex'  customstyle="text-align: start; flex-direction: column;" >
-   <WeatherSubheading style={{color: "grey", paddingBottom: '5px'}}>
+   <Container display="flex"  customstyle="text-align: start; flex-direction: column;" >
+   <WeatherSubheading style={{color: "grey", paddingBottom: "5px"}}>
     Name
    </WeatherSubheading >
    <TextInput type="text" name="from_name" id="from_name" required />
@@ -168,14 +168,14 @@ export default function ContactForm(){
 <ErrorMessage> Invalid name</ErrorMessage>
    )}
    </Container>
-   <Container display='flex'  customstyle="text-align: start; flex-direction: column;" >
-   <WeatherSubheading style={{color: "grey", paddingBottom: '5px'}}>
+   <Container display="flex"  customstyle="text-align: start; flex-direction: column;" >
+   <WeatherSubheading style={{color: "grey", paddingBottom: "5px"}}>
     Email
    </WeatherSubheading>
    <TextInput type="email" name="from_email" id="from_email"  required />
    </Container>
-   <Container display='flex'  customstyle="text-align: start; flex-direction: column;" >
-   <WeatherSubheading style={{color: "grey", paddingBottom: '5px'}}>
+   <Container display="flex"  customstyle="text-align: start; flex-direction: column;" >
+   <WeatherSubheading style={{color: "grey", paddingBottom: "5px"}}>
     Message
    </WeatherSubheading>
    <MessageInput  name="message" id="message"   required />
@@ -184,7 +184,7 @@ export default function ContactForm(){
    )}
    </Container>
    <SubmitButton type="submit">
-  {isSending ? <Loader /> : 'Send Message'}
+  {isSending ? <Loader /> : "Send Message"}
 </SubmitButton>
 </form>
 </Container>

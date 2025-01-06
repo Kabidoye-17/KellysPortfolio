@@ -16,8 +16,12 @@ type Props = {
   backgroundcolor?: string;
   position?: string;
   alignself?: string;
+  alignitems?: string;
   justifyself?: string;
-  display?:string;
+  justifycontent?: string;
+  display?: string;
+  textalign?: string;
+  flexdirection?: string;
   customstyle?: string;
   children?: React.ReactNode;
 };
@@ -38,8 +42,12 @@ const StyledContainer = styled.div<{
   backgroundcolor?: string;
   position?: string;
   alignself?: string;
+  alignitems?: string;
   justifyself?: string;
+  justifycontent?: string;
   display?: string;
+  textalign?: string;
+  flexdirection?: string;
   customstyle?: string;
 }>`
   height: ${({ height }) => height || 'auto'};
@@ -57,8 +65,12 @@ const StyledContainer = styled.div<{
   background-color: ${({ backgroundcolor }) => backgroundcolor || 'transparent'};
   position: ${({ position }) => position || 'static'};
   align-self: ${({ alignself }) => alignself || 'auto'};
+  align-items: ${({ alignitems }) => alignitems};
   justify-self: ${({ justifyself }) => justifyself || 'auto'};
-  display: ${({ display }) => display};
+  justify-content: ${({ justifycontent }) => justifycontent};
+  text-align: ${({textalign}) => textalign};
+  flex-direction: ${({flexdirection}) => flexdirection};
+    display: ${({ display }) => display};
   ${({ customstyle }) => customstyle};
 `;
 
@@ -78,8 +90,11 @@ export default function Container({
   backgroundcolor,
   position,
   alignself,
+  alignitems,
   justifyself,
+  justifycontent,
   display,
+  textalign,
   customstyle,
   children
 }: Props){
@@ -95,13 +110,16 @@ export default function Container({
       backgroundcolor={backgroundcolor}
       position={position}
       alignself={alignself}
+      alignitems={alignitems}
       justifyself={justifyself}
+      justifycontent={justifycontent}
       customstyle={customstyle}
       borderLeft={borderLeft}
       borderRight={borderRight}
       borderBottom={borderBottom}
       borderTop={borderTop}
       border={border}
+      textalign={textalign}
       display={display}
     >
       {children}
