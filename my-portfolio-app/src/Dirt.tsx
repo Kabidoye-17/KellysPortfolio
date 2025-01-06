@@ -38,7 +38,7 @@ export default function Dirt({ colourScheme, myWorkRef }: Props) {
               image="./images/website.png"
               website={true}
               websiteLink="http://localhost:3000/"
-              sourceCode="https://github.com/Kabidoye-17/myNewPortfolio"
+              sourceCode="https://github.com/Kabidoye-17/KellysPortfolio"
             />
             <ProjectContainer
               date="April 2024"
